@@ -1,5 +1,10 @@
 #include "sort.h"
 
+/**
+ * swaper - swapes
+ * @a: arg
+ * @b: arg
+ */
 void swaper(int *a, int *b)
 {
 	int tmp = *a;
@@ -21,17 +26,16 @@ void bubble_sort(int *array, size_t size)
 	int swaped;
 	size_t i;
 
-	do
-	{
+	do {
 		swaped = 0;
 		for (i = 0; i < size - 1; i++)
 		{
 			if (array[i] > array[i + 1])
 			{
 				swaped = 1;
-				swaper(&array[i], &array[i+1]);
+				swaper(&array[i], &array[i + 1]);
 				print_array(array, size);
 			}
 		}
-	} while(swaped);
+	} while (swaped);
 }
