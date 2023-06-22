@@ -1,5 +1,11 @@
 #include "sort.h"
 
+void swaper(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
 
 void selection_sort(int *array, size_t size)
 {
