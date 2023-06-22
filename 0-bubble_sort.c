@@ -1,5 +1,13 @@
 #include "sort.h"
 
+void swaper(int *a, int *b)
+{
+	int tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+
 /**
  * bubble_sort - Sorts an array of integers in ascending order using the
  *               Bubble Sort algorithm.
@@ -10,7 +18,8 @@
 
 void bubble_sort(int *array, size_t size)
 {
-	int i, tmp, swaped;
+	int swaped;
+	size_t i;
 
 	do
 	{
