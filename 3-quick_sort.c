@@ -50,7 +50,7 @@ void quick_sort_helper(int *arr, int low, int high, size_t size)
 		pivot = partition(arr, low, high, size);
 		if (pivot - low > 1)
 			quick_sort_helper(arr, low, pivot - 1, size);
-		if(high - pivot > 1)
+		if (high - pivot > 1)
 			quick_sort_helper(arr, pivot + 1, high, size);
 	}
 }
