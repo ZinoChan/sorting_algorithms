@@ -1,18 +1,5 @@
 #include "sort.h"
 
-/**
- * swaper - swapes
- * @a: arg
- * @b: arg
- */
-void swaper(int *a, int *b)
-{
-	int tmp = *a;
-
-	*a = *b;
-	*b = tmp;
-}
-
 
 /**
  * bubble_sort - Sorts an array of integers in ascending order using the
@@ -24,7 +11,7 @@ void swaper(int *a, int *b)
 
 void bubble_sort(int *array, size_t size)
 {
-	int swaped;
+	int swaped, tmp;
 	size_t i;
 
 	if (!array || size == 0)
@@ -38,7 +25,9 @@ void bubble_sort(int *array, size_t size)
 			if (array[i] > array[i + 1])
 			{
 				swaped = 1;
-				swaper(&array[i], &array[i + 1]);
+				tmp = array[i];
+				array[i] = array[i + 1];
+				array[i + 1] = tmp;
 				print_array(array, size);
 			}
 		}
