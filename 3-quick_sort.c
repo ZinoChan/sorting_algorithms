@@ -21,11 +21,11 @@ void swaper(int *a, int *b)
  * @size: size
  * Return: int
  */
-int partition(int arr[], int low, int high, size_t size)
+int partition(int *arr, int low, int high, size_t size)
 {
 	int pivot = arr[high], i = low - 1, j;
 
-	for (j = low; j < high - 1; j++)
+	for (j = low; j <= high - 1; j++)
 	{
 		if (arr[j] < pivot)
 		{
@@ -46,7 +46,7 @@ int partition(int arr[], int low, int high, size_t size)
  * @high: arg
  * @size: size
  */
-void quick_sort_helper(int arr[], int low, int high, size_t size)
+void quick_sort_helper(int *arr, int low, int high, size_t size)
 {
 	int pivot;
 
@@ -65,5 +65,6 @@ void quick_sort_helper(int arr[], int low, int high, size_t size)
 */
 void quick_sort(int *array, size_t size)
 {
-	quick_sort_helper(array, 0, size - 1, size);
+	if (array != NULL)
+		quick_sort_helper(array, 0, size - 1, size);
 }
